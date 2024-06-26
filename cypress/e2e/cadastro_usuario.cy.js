@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import "allure-cypress/commands";
 
 const element_register = require("../fixtures/elemento_cadastro.json")
 

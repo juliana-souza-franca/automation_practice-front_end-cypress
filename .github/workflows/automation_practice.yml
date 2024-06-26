@@ -29,8 +29,9 @@ jobs:
 
       - name: Install Allure dependencies
         run: |
-          npm install allure-commandline --save-dev
-         
+           npm install mocha-allure-reporter --save-dev
+           npm install allure-commandline --save-dev
+           export PATH=$PATH:./node_modules/.bin
 
       - name: Run Cypress tests
         run: npx cypress run --reporter mocha-allure-reporter

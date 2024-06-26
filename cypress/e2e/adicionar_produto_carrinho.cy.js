@@ -1,6 +1,4 @@
 /// <reference types="cypress" />
-import "allure-cypress/commands";
-
 
 const cart = require('../fixtures/elemento_add_carrinho.json')
 
