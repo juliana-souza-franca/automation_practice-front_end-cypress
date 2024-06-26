@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import "allure-cypress/commands";
 
 const seach = require('../fixtures/elemento_pesquisa.json')
 

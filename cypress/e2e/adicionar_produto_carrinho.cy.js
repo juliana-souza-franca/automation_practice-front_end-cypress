@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import "allure-cypress/commands";
+
 
 const cart = require('../fixtures/elemento_add_carrinho.json')
 
@@ -11,7 +13,7 @@ afterEach(() => {
 })
 
 describe('Adicionar o produto no carrinho', () => {
- 
+
 it('adicionar um produto no carrinho com sucesso', () => {
     cy.get(cart.MENU_WOMEN).click()
     cy.get(cart.PRODUCT).click()
