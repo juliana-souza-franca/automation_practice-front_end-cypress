@@ -31,7 +31,10 @@ jobs:
         run: |
            npm install mocha-allure-reporter --save-dev
            npm install allure-commandline --save-dev
-           export PATH=$PATH:./node_modules/.bin
+        
+        - name: Add Allure to PATH
+          run: echo "$(npm bin)/allure" >> $GITHUB_PATH
+
 
       - name: Run Cypress tests
         run: npx cypress run --reporter mocha-allure-reporter
