@@ -33,8 +33,8 @@ jobs:
            npm install mocha-allure-reporter --save-dev
            npm install allure-commandline --save-dev
         
-        - name: Add Allure to PATH
-          run: echo "$(npm bin)/allure" >> $GITHUB_PATH
+      - name: Add Allure to PATH
+        run: echo "$(npm bin)/allure" >> $GITHUB_PATH
 
 
       - name: Run Cypress tests
