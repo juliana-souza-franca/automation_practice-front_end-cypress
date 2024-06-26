@@ -1,0 +1,6 @@
+{
+ "LOGIN_EMAIL": "#email",
+ "LOGIN_PASSWORD":"#passwd",
+ "BUTTON_LOGIN": "#SubmitLogin",
+ "MESSAGE_VALIDATA_LOGIN": ".account"
+}

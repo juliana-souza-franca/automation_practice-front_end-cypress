@@ -1,0 +1,6 @@
+{
+  "INPUT_PESQUISA": "#search_query_top",
+  "BUTTON_PESQUISA": "button[class='btn btn-default button-search']",
+  "MENSSAGE_VALIDATA_SEACH": "h5[itemprop='name']"
+
+}

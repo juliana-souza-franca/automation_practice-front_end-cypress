@@ -1,0 +1,16 @@
+{
+   "BUTTON_SIGNIN" : ".login",
+   "INPUT_EMAIL": "#email_create",
+   "BUTTON_CREATE_ACCOUNT": "#SubmitCreate", 
+   "RADIO_TITLE": "#id_gender2",
+   "INPUT_FIRST_NAME": "#customer_firstname",
+   "INPUT_LAST_NAME": "#customer_lastname",
+   "INPUT_PASSWORD": "#passwd",
+   "SELECT_DAYS" :  "#days",
+   "SELECT_MONTHS": "#months",
+   "SELECT_YEARS":  "#years",
+   "CHECKBOX": "#newsletter",
+   "BUTTON_REGISTER": "#submitAccount",
+   "MESSAGE_SUCESS": "p[class='alert alert-success']"
+   
+}
