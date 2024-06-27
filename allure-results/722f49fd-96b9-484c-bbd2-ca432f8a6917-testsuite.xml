@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1719496830122' stop='1719496875953'>
+    <name>Cadastro de usuário</name>
+    <title>Cadastro de usuário</title>
+    <test-cases>
+        <test-case start='1719496830122' status='passed' stop='1719496875951'>
+            <name>cadastrar um usuário com sucesso</name>
+            <title>cadastrar um usuário com sucesso</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
