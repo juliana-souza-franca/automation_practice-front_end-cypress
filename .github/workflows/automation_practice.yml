@@ -29,8 +29,8 @@ jobs:
 
       - name: Install Allure dependencies
         run: |
-           npm install mocha-allure-reporter --save-dev
-           npm install allure-commandline --save-dev
+          npm install mocha-allure-reporter --save-dev
+          npm install allure-commandline --save-dev
         
       - name: Add Allure to PATH
         run: echo "$(npm bin)/allure" >> $GITHUB_PATH
@@ -48,7 +48,6 @@ jobs:
           name: allure-report
           path: ./allure-report
 
-
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
@@ -62,6 +61,9 @@ jobs:
       name: github-pages
       url: https://juliana-souza-franca.github.io/automation_practice-front_end-cypress/allure-report/index.html
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
