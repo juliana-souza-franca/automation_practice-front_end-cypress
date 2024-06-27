@@ -39,7 +39,7 @@ jobs:
         run: npx cypress run --reporter mocha-allure-reporter
 
       - name: Debug List files in allure-report before upload
-        run: ls -la ./allure-report
+        run: ls -la ./allure-results
 
       - name: Archive Allure Report
         if: ${{ always() }}
