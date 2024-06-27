@@ -38,7 +38,7 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run --reporter mocha-allure-reporter
 
-      - name: Debug: List files in allure-report before upload
+      - name: Debug List files in allure-report before upload
         run: ls -la ./allure-report
 
       - name: Archive Allure Report
@@ -48,7 +48,7 @@ jobs:
           name: allure-report
           path: ./allure-report
 
-      - name: Debug: List files in the workspace after upload
+      - name: Debug List files in the workspace after upload
         run: ls -la
 
   deploy:
@@ -75,7 +75,7 @@ jobs:
         with:
           name: allure-report
 
-      - name: Debug: List downloaded artifacts
+      - name: Debug List downloaded artifacts
         run: ls -la
 
       - name: Upload Allure Report to Pages
