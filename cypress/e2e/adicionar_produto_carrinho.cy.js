@@ -1,6 +1,10 @@
 /// <reference types="cypress" />
 
+import {allure}  from '@shelex/cypress-allure-plugin';
+
+
 const cart = require('../fixtures/elemento_add_carrinho.json')
+
 
 beforeEach(() => {
   cy.visit('/')  

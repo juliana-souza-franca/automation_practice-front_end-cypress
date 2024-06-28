@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import {allure}  from '@shelex/cypress-allure-plugin';
+
 const element_login = require("../fixtures/elemento_login.json")
 const element_register = require("../fixtures/elemento_cadastro.json")
 const dados_massa   =  require("../fixtures/massa_dados_login.json")

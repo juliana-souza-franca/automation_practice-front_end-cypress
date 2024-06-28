@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import {allure}  from '@shelex/cypress-allure-plugin';
+
 const seach = require('../fixtures/elemento_pesquisa.json')
 
 beforeEach(() => {

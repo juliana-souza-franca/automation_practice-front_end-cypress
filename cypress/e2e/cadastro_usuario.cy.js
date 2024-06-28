@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import {allure}  from '@shelex/cypress-allure-plugin';
+
 const element_register = require("../fixtures/elemento_cadastro.json")
 
 import { faker } from '@faker-js/faker';
