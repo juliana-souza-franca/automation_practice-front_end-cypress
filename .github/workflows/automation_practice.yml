@@ -85,7 +85,7 @@ jobs:
         run: ls -la 
 
       - name: Upload Allure Report to Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./allure-report
       
