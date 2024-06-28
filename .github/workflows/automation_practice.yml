@@ -82,7 +82,7 @@ jobs:
           name: allure-report
 
       - name: Debug List downloaded artifacts
-        run: ls -la ./allure-report
+        run: ls -la 
 
       - name: Upload Allure Report to Pages
         uses: actions/upload-pages-artifact@v3
