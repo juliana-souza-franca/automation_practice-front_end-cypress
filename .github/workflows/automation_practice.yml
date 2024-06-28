@@ -85,12 +85,11 @@ jobs:
         run: ls -la 
 
       - name: Upload Allure Report to Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./allure-report
-      
-      - name: Debug List Upload Allure Report
-        run: ls -la
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+
 
       - name: Deploy to Github Pages
         id: deployment
