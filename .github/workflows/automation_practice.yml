@@ -90,7 +90,7 @@ jobs:
           path: ./allure-report
       
       - name: Debug List Upload Allure Report
-        run: ls -la ./allure-report
+        run: ls -la
 
       - name: Deploy to Github Pages
         id: deployment
