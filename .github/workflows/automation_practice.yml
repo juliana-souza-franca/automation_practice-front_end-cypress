@@ -68,7 +68,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://juliana-souza-franca.github.io/automation_practice-front_end-cypress/allure-report/index.html
+      url: https://juliana-souza-franca.github.io/automation_practice-front_end-cypress/allure-report
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -85,11 +85,12 @@ jobs:
         run: ls -la 
 
       - name: Upload Allure Report to Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
-
+          path: ./allure-report
+      
+      - name: Debug List Upload Allure Report
+        run: ls -la
 
       - name: Deploy to Github Pages
         id: deployment
