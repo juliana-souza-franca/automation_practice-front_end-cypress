@@ -82,13 +82,19 @@ jobs:
           name: allure-report
 
       - name: Debug List downloaded artifacts
-        run: ls -la
+        run: ls -la ./allure-report
 
       - name: Upload Allure Report to Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./allure-report
+      
+      - name: Debug List Upload Allure Report
+        run: ls -la ./allure-report
 
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      - name: Debug List all files in the workspace
+        run: ls -la  
