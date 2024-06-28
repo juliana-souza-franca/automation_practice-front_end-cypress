@@ -58,17 +58,18 @@ jobs:
         run: ls -la
 
   deploy:
-    name: Deploy GitHub Pages 🌐
-    runs-on: ubuntu-latest
-    if: always()
-    needs: test
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+     name: Deploy GitHub Pages 🌐
+     runs-on: ubuntu-latest
+      if: always()
+      needs: test
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
     environment:
       name: github-pages
       url: https://juliana-souza-franca.github.io/automation_practice-front_end-cypress/allure-report/index.html
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -82,19 +83,24 @@ jobs:
           name: allure-report
 
       - name: Debug List downloaded artifacts
-        run: ls -la 
+        run: ls -la allure-report
+
+      - name: Archive Artifact
+        run: |
+          tar --dereference --hard-dereference --directory allure-report -cvf $RUNNER_TEMP/artifact.tar --exclude=.git --exclude=.github .
+
+      - name: Debug List Archive Artifact
+        run: ls -la $RUNNER_TEMP
 
       - name: Upload Allure Report to Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
-          path: ./allure-report
-      
-      - name: Debug List Upload Allure Report
-        run: ls -la  
+          name: github-pages
+          path: $RUNNER_TEMP/artifact.tar
 
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      
+
       - name: Debug List all files in the workspace
-        run: ls -la  
+        run: ls -la
