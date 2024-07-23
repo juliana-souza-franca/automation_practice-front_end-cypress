@@ -64,7 +64,6 @@ jobs:
       - name: Debug List files in the workspace after upload
         run: ls -la
 
-
   deploy:
     name: Deploy GitHub Pages 
     runs-on: ubuntu-latest
