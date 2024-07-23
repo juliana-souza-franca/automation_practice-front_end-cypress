@@ -90,7 +90,7 @@ jobs:
           name: github-pages
 
       - name: Debug List downloaded artifacts
-        run: ls -la github-pages
+        run: ls -la
 
       - name: Archive Artifact  
         run: tar -czf $RUNNER_TEMP/artifact.tar -C github-pages .
