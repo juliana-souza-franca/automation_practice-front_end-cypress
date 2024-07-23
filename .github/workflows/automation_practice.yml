@@ -90,10 +90,15 @@ jobs:
           name: github-pages
 
       - name: Debug List downloaded artifacts
-        run: ls -la
+        run: ls -la || echo "No files found"
 
       - name: Archive Artifact  
-        run: tar -czf $RUNNER_TEMP/artifact.tar -C github-pages .
+        run: |
+          if [ -d "github-pages" ]; then
+            tar -czf $RUNNER_TEMP/artifact.tar -C github-pages .
+          else
+            echo "Directory github-pages does not exist, skipping tar step"
+          fi
 
       - name: Debug List Archive Artifact
         run: ls -la $RUNNER_TEMP
