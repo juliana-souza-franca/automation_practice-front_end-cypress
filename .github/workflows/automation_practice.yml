@@ -92,6 +92,12 @@ jobs:
       - name: Debug List downloaded artifacts
         run: ls -la github-pages || echo "No files found in github-pages directory"
 
+      - name: Check size of artifact directory
+        run: du -sh github-pages
+
+      - name: Remove symbolic links and hard links (if any)
+        run: find github-pages -type l -exec rm -f {} \; || echo "No symbolic links found"
+
       - name: Archive Artifact  
         run: |
           if [ -d "github-pages" ]; then
