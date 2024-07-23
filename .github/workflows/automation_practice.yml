@@ -64,6 +64,7 @@ jobs:
       - name: Debug List files in the workspace after upload
         run: ls -la
 
+
   deploy:
     name: Deploy GitHub Pages 
     runs-on: ubuntu-latest
@@ -88,7 +89,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-report
-          path: allure-report
 
       - name: Debug List downloaded artifacts
         run: ls -la allure-report
