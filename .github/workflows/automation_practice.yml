@@ -92,6 +92,12 @@ jobs:
       - name: Debug List downloaded artifacts
         run: ls -la || echo "No files found"
 
+      - name: List contents of the artifact tar
+        run: tar -tf $RUNNER_TEMP/artifact.tar
+
+      - name: Check size of artifact tar
+        run: du -h $RUNNER_TEMP/artifact.tar
+
       - name: Archive Artifact  
         run: |
           if [ -d "github-pages" ]; then
