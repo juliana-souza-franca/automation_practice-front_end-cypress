@@ -58,7 +58,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
+          name: github-pages
           path: allure-report
 
       - name: Debug List files in the workspace after upload
@@ -87,13 +87,13 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: allure-report
+          name: github-pages
 
       - name: Debug List downloaded artifacts
-        run: ls -la allure-report
+        run: ls -la github-pages
 
       - name: Archive Artifact  
-        run: tar -czf $RUNNER_TEMP/artifact.tar -C allure-report .
+        run: tar -czf $RUNNER_TEMP/artifact.tar -C github-pages .
 
       - name: Debug List Archive Artifact
         run: ls -la $RUNNER_TEMP
