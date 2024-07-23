@@ -88,6 +88,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-report
+          path: allure-report
 
       - name: Debug List downloaded artifacts
         run: ls -la allure-report
