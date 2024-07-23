@@ -90,13 +90,7 @@ jobs:
           name: github-pages
 
       - name: Debug List downloaded artifacts
-        run: ls -la || echo "No files found"
-
-      - name: List contents of the artifact tar
-        run: tar -tf $RUNNER_TEMP/artifact.tar
-
-      - name: Check size of artifact tar
-        run: du -h $RUNNER_TEMP/artifact.tar
+        run: ls -la github-pages || echo "No files found in github-pages directory"
 
       - name: Archive Artifact  
         run: |
@@ -107,7 +101,7 @@ jobs:
           fi
 
       - name: Debug List Archive Artifact
-        run: ls -la $RUNNER_TEMP
+        run: ls -la $RUNNER_TEMP || echo "No files found in $RUNNER_TEMP"
 
       - name: Upload Allure Report to Pages
         uses: actions/upload-artifact@v4
