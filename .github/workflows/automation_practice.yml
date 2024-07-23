@@ -64,8 +64,9 @@ jobs:
       - name: Debug List files in the workspace after upload
         run: ls -la
 
+
  deploy:
-    name: Deploy GitHub Pages 🌐
+    name: Deploy GitHub Pages 
     runs-on: ubuntu-latest
     needs: test
     if: always()
@@ -92,9 +93,8 @@ jobs:
       - name: Debug List downloaded artifacts
         run: ls -la allure-report
 
-      - name: Archive Artifact
-        run: |
-          tar --dereference --hard-dereference --directory allure-report -cvf $RUNNER_TEMP/artifact.tar --exclude=.git --exclude=.github .
+      - name: Archive Artifact  
+        run: tar -czf $RUNNER_TEMP/artifact.tar -C allure-report .
 
       - name: Debug List Archive Artifact
         run: ls -la $RUNNER_TEMP
