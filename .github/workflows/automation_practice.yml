@@ -40,7 +40,6 @@ jobs:
           name: mochawesome-report
           path: cypress/results
 
-
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
