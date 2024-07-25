@@ -30,10 +30,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Cypress Tests
-        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true --parallel --record --group job-${{ matrix.containers }}
+        run: npx cypress run --headless --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
 
       - name: Merge Mochawesome Reports
         run: npx mochawesome-merge cypress/results/*.json > cypress/results/report.json
