@@ -9,6 +9,9 @@ on:
 
 jobs:
   test:
+    strategy:
+      matrix:
+        containers: [1, 2, 3, 4] 
     name: Test Front run
     runs-on: ubuntu-latest
 
@@ -21,11 +24,19 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install Dependencies
         run: npm install
 
       - name: Run Cypress Tests
-        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
+        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true --parallel --record --group job-${{ matrix.containers }}
 
       - name: Merge Mochawesome Reports
         run: npx mochawesome-merge cypress/results/*.json > cypress/results/report.json
