@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install Dependencies
-         run: npm install
+        run: npm install
 
       - name: Run Cypress Tests
         run: npx cypress run --headless --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
