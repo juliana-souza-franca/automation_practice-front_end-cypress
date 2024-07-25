@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
-
-import {allure}  from '@shelex/cypress-allure-plugin';
+const { MochaAllureReporter } = require('mocha-allure-reporter');
 
 const seach = require('../fixtures/elemento_pesquisa.json')
 
