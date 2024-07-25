@@ -1,6 +1,5 @@
 const { defineConfig } = require("cypress");
-//const allureWriter = require('@shelex/cypress-allure-plugin/writer');
-const { allureCypress } = require("allure-cypress/reporter");
+const { MochaAllureReporter } = require('mocha-allure-reporter');
 
 module.exports = defineConfig({
   projectId: 'qjkszx',
@@ -9,9 +8,7 @@ module.exports = defineConfig({
 
   
     setupNodeEvents(on, config) {
-      //allureWriter(on, config);
-      allureCypress(on);
-      return config;
+    
     },
   },
 
@@ -20,5 +17,13 @@ module.exports = defineConfig({
   video: true,
   videoCompression: false,
   videosFolder: 'cypress/videos',
-  defaultCommandTimeout: 10000
+  defaultCommandTimeout: 10000,
+  fixturesFolder: 'cypress/fixtures',
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: true,
+    json: true
+  }
 })

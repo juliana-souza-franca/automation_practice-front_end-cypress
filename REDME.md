@@ -113,6 +113,9 @@ cy.Login(email, password);
 
 })
 
+## Gerar relatório 
+link: https://docs.cypress.io/guides/tooling/reporters
+
 
 # Boas praticas
 Sempre quando for iniciar o projeto de automação pelo Cypress não deixa de colocar a referencia do tipo cypress: ///
