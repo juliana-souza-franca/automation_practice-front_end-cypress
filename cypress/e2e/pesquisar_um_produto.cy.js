@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-const { MochaAllureReporter } = require('mocha-allure-reporter');
+
 
 const seach = require('../fixtures/elemento_pesquisa.json')
 

@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-const { MochaAllureReporter } = require('mocha-allure-reporter');
+
 
 const element_login = require("../fixtures/elemento_login.json")
 const element_register = require("../fixtures/elemento_cadastro.json")

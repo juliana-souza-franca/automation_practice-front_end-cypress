@@ -1,6 +1,8 @@
 const { defineConfig } = require("cypress");
 const { MochaAllureReporter } = require('mocha-allure-reporter');
 
+
+
 module.exports = defineConfig({
   projectId: 'qjkszx',
   e2e: {
@@ -8,7 +10,7 @@ module.exports = defineConfig({
 
   
     setupNodeEvents(on, config) {
-    
+   
     },
   },
 
